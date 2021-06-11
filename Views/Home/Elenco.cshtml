@@ -1,0 +1,32 @@
+@model DBContext
+@{
+    ViewData["Title"] ="Grazie";
+}
+<br><br>
+<div class="text-center">
+    <h1 class="display-4">Tutti i condomini</h1>
+    <h3>@Html.ActionLink("Per cancellare tutti i dati clicca qui","CancellaTutto","Home",null,null)</h3>
+    
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Piani</th>
+                
+                </tr>
+            </thead>
+        <tbody>
+            @foreach(Condominio a in Model.Condomini)
+            {
+                <tr>
+                    <td>@a.Nome</td>
+                    <td>@a.Piani</td>
+                    <td>@Html.ActionLink("Alloggi","UnitaImm", "Home", new {Id=a.CondominioId}, null)</td>
+                    <td>@Html.ActionLink("modifica","Modifica", "Home", new {Id=a.CondominioId}, null)</td>
+                    <td>@Html.ActionLink("cancella","Cancella", "Home", new {Id=a.CondominioId}, null)</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
