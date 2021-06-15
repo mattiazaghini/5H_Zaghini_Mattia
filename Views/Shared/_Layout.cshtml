@@ -10,21 +10,21 @@
 	</head>
 <body>
 	
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-								<!--<li><a class="nav-link text-dark active" asp-area="" asp-controller="Account" asp-action="Login">Accedi</a></li>
-								<li><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Registra">Registrati </a></li>-->
-								<li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Elenco">Condomini</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AggiungiCond">Aggiungi condominio</a></li>
-								@if (User.Identity.IsAuthenticated)
-                    			{
-									<li><a asp-area="" asp-controller="Account" asp-action="LogOut">Log Out</a></li>
-								}
-							</ul>
-						</nav>
-  <div class="container">
+<!-- Nav -->
+	<nav id="nav">
+		<ul>
+			<li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+			<!--<li><a class="nav-link text-dark active" asp-area="" asp-controller="Account" asp-action="Login">Accedi</a></li>
+			<li><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Registra">Registrati </a></li>-->
+	    	<li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Elenco">Condomini</a></li>
+            <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AggiungiCond">Aggiungi condominio</a></li>
+			@if (User.Identity.IsAuthenticated)
+            {
+				<li><a asp-area="" asp-controller="Account" asp-action="LogOut">Log Out</a></li>
+			}
+		</ul>
+	</nav>
+    <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

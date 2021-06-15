@@ -1,0 +1,35 @@
+@model _5H_Zaghini_Mattia.Models.Consiglieri
+@{
+    var a= Model;
+    ViewData["Title"] ="Elenco";
+}
+<br><br>
+<div class="text-center">
+    <h3 class="display-4">Manutenzione del condominio</h3>
+    <link rel="Stylesheet" href="~/css/table.css">
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Codice Fiscale</th>
+                <th>Cognome</th>
+                <th>Nome</th>
+                <th>Data di nascita</th>
+                <th>Indirizzo</th>
+                <th>Inizio lavori</th>
+                <th>Fine lavori</th>
+                </tr>
+            </thead>
+        <tbody>
+             <tr>
+                <td>@a.codiceF/td>
+                <td>@a.cognome</td>
+                <td>@a.nome</td>
+                <td>@a.dataNascita</td>
+                <td>@a.indirizzo</td>
+                <td>@a.inizioIncarico</td>
+                <td>@a.fineIncarico</td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+</div>

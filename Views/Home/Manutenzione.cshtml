@@ -1,0 +1,32 @@
+@model _5H_Zaghini_Mattia.Models.Manutenzione
+@{
+    var a= Model;
+    ViewData["Title"] ="Elenco";
+}
+<br><br>
+<div class="text-center">
+    <h3 class="display-4">Manutenzione del condominio</h3>
+    <link rel="Stylesheet" href="~/css/table.css">
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>inizio lavori</th>
+                <th>ore lavori</th>
+                <th>tipologia</th>
+                <th>durata lavori</th>
+                <th>costo lavori</th>
+            
+                </tr>
+            </thead>
+        <tbody>
+             <tr>
+                <td>@a.inizioLav</td>
+                <td>@a.oreLav</td>
+                <td>@a.tipologia</td>
+                <td>@a.durataLav</td>
+                <td>@a.costoLav</td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,26 @@
+@model _5H_Zaghini_Mattia.Models.Spese
+@{
+    var a= Model;
+    ViewData["Title"] ="Elenco";
+}
+<br><br>
+<div class="text-center">
+    <h3 class="display-4">Spese dell'alloggio</h3>
+    <link rel="Stylesheet" href="~/css/table.css">
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Soldi spese: </th>
+                <th>Numero civico interno: </th>
+            
+                </tr>
+            </thead>
+        <tbody>
+             <tr>
+                <td>@a.soldiSpese</td>
+                <td>@a.FKnumeroCivico</td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -4,10 +4,14 @@
 }
 <br><br>
 <div class="text-center">
+    
+    <br>
+    
+    <br>
     <h3 class="display-4">Tutti i condomini</h3>
     <br>
     <h1>@Html.ActionLink("Per cancellare tutti i dati clicca qui","CancellaTutto","Home",null,null)</h1>
-    <br>
+    
     <link rel="Stylesheet" href="~/css/table.css">
     <table class="table table-bordered table-striped table-sm" font-family: arial, sans-serif; border-collapse: collapse; width: 100%;>
         <thead>
@@ -23,10 +27,9 @@
                     <td>@a.Nome</td>
                     <td>@a.Piani</td>       
                     <td>@Html.ActionLink("Alloggi","UnitaImm", "Home", new {Id=a.CondominioId}, null)</td>
-                    <td>@Html.ActionLink("manutenzione","Manutenzione", "Home", new {Id=a.CondominioId}, null)</td>
-                    <td>@Html.ActionLink("consiglieri","Consiglieri", "Home", new {Id=a.CondominioId}, null)</td>
-                    <td>@Html.ActionLink("modifica","Modifica", "Home", new {Id=a.CondominioId}, null)</td>
-                    <td>@Html.ActionLink("cancella","Cancella", "Home", new {Id=a.CondominioId}, null)</td>
+                    <td>@Html.ActionLink("Consiglieri","Consiglieri", "Home", new {Id=a.CondominioId}, null)</td>
+                    <td>@Html.ActionLink("Modifica","Modifica", "Home", new {Id=a.CondominioId}, null)</td>
+                    <td>@Html.ActionLink("Cancella","Cancella", "Home", new {Id=a.CondominioId}, null)</td>
                 </tr>
             }
         </tbody>
