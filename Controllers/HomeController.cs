@@ -59,7 +59,7 @@ namespace _5H_Zaghini_Mattia.Controllers
             
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet]
          public IActionResult Elenco()
         {
@@ -103,43 +103,63 @@ namespace _5H_Zaghini_Mattia.Controllers
             return View("Elenco",db);
         }    
 
-        //[Authorize]
+        [Authorize]
         [HttpGet] 
         public IActionResult UnitaImm(int Id)
         {
             var db= new DBContext();
             Condominio aggiunge=db.Condomini.Find(Id);
-
             if(aggiunge!=null)
             {
-                AggiungeUnitaImm Unita= db.AggiungiUnitaImm.Find(aggiunge.CondominioId);
+                UnitaImm Unita=new UnitaImm{FKidCondominio=aggiunge.CondominioId};
+                //UnitaImm Unita=(from unitai in db.AggiungiUnitaImm where unitai.FKidCondominio==aggiunge.CondominioId select unitai).FirstOrDefault();
                 return View("UnitaImm",Unita);
             }
             else
             {
                 return NotFound();
-            }
-            
+            }    
         }
-
-
-        [HttpGet] 
-        public IActionResult AggiungiAlloggio(int Id)
+        
+        [HttpGet]
+        public IActionResult AggiungiUnitaImm(int Id)
         {
             var db= new DBContext();
-            Condominio aggiunge=db.Condomini.Find(Id);
-
-            if(aggiunge!=null)
-            {
-                AggiungeUnitaImm Unita= db.AggiungiUnitaImm.Find(aggiunge.CondominioId);
-                return View("AggiungiUnitaImm",Unita);
-            }
-            else
-            {
-                return NotFound();
-            }
-            
+            //UnitaImm imm=db.AggiungiUnitaImm.Find(Id);
+            UnitaImm Unita=new UnitaImm{FKidCondominio=Id};
+            return View("AggiungiUnitaImm",Unita);
         }
+
+        [HttpPost]
+        public IActionResult AggiungiUnitaImm(UnitaImm dati)
+        {
+            var db=new DBContext();
+            db.AggiungiUnitaImm.Add(dati);
+            db.SaveChanges();
+            return View("UnitaImm");
+        }
+
+        [HttpGet]
+        public IActionResult MostraUnitaImm(int Id)
+        {
+            var db= new DBContext();
+            var query = from unita in db.AggiungiUnitaImm where unita.FKidCondominio == Id select unita;
+            return View("UnitaImm");
+        }
+
+        [HttpGet]
+        public IActionResult Spese()
+        {
+            return View("Spese");
+        }
+
+        [HttpGet]
+        public IActionResult Manutenzione()
+        {
+            return View("Manutenzione");
+        }
+
+
 
 
         public IActionResult Privacy()

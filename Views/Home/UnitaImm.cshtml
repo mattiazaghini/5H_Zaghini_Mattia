@@ -1,11 +1,14 @@
-@model _5H_Zaghini_Mattia.Models.AggiungeUnitaImm
+@model _5H_Zaghini_Mattia.Models.UnitaImm
 @{
     var a= Model;
-    ViewData["Title"] ="Grazie";
+    ViewData["Title"] ="Elenco";
 }
 <br><br>
 <div class="text-center">
-    <h1 class="display-4">Unità immobiliari</h1>
+    <br>
+    <br>
+    <h3 class="display-4">Unità immobiliari</h3>
+    <link rel="Stylesheet" href="~/css/table.css">
     <table class="table table-bordered table-striped table-sm">
         <thead>
             <tr>
@@ -13,19 +16,20 @@
                 <th>Superficie (mq)</th>
                 <th>Persone</th>
                 <th>Piano dell'alloggio</th>
-                
                 </tr>
             </thead>
         <tbody>
-            
-            <tr>
-                <td asp-for="NumeroCivico"></td>
-                 <td asp-for="Superficie"></td>
-                 <td asp-for="nPersone"></td>
-                 <td asp-for="NumeroPiano"></td>
-                 
+             <tr>
+                <td>@a.NumeroCivico</td>
+                <td>@a.Superficie</td>
+                <td>@a.nPersone</td>
+                <td>@a.NumeroPiano</td>
+                <br>
+                <ul class="actions stacked">
+                    <li><a asp-area="" asp-controller="Home" asp-action="AggiungiUnitaImm">Aggiungi un alloggio</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Spese">Spese</a></li>
+                </ul>
             </tr>
-            
         </tbody>
     </table>
 </div>

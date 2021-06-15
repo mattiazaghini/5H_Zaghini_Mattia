@@ -1,21 +1,18 @@
-@model _5H_Zaghini_Mattia.Models.AggiungeUnitaImm
+@model _5H_Zaghini_Mattia.Models.UnitaImm
 @{
     ViewData["Title"] = "Aggiungi Condominio";
 }
 <br>
 <br>
 <div class="text-center">
-    <form class="m-2" method="POST" asp-action="AggiungiUnitaImm">
-        <div class="form-group">
-            <label>Numero civico:</label>
-            <input asp-for="NumeroCivico" class="form-control">
-        </div>
+    <form class="m-2" method="POST" asp-controller="Home" asp-action="AggiungiUnitaImm"> 
+        <input type="hidden" asp-for="FKidCondominio" class="form-control">
         <div class="form-group">
             <label>Superficie:</label>
             <input asp-for="Superficie" class="form-control">
         </div>
         <div class="form-group">
-            <label>numero persone:</label>
+            <label>Numero persone:</label>
             <input asp-for="nPersone" class="form-control">
         </div>
         <div class="form-group">

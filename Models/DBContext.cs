@@ -18,5 +18,5 @@ public class DBContext : IdentityDbContext
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlite("Data Source=database.db");
     public DbSet<Condominio> Condomini { get ; set; }
-    public DbSet<AggiungeUnitaImm> AggiungiUnitaImm { get ; set; }
+    public DbSet<UnitaImm> AggiungiUnitaImm { get ; set; }
 }
